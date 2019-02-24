@@ -13,7 +13,7 @@
 
 <div class='jumbotron'>
     <div class='container'>
-        <h1 class="display-3">Classify images of London bridges</h1>
+        <h1 class="display-4">Classify images of London bridges</h1>
         <p>Use images of <strong>Albert</strong> bridge, <strong>Battersea</strong> bridge, or <strong>Chelsea</strong> bridge</p>
         <div class='row'>
             <div class='d-none'>
@@ -27,6 +27,7 @@
             <div class='col-sm'>
                 <button class='btn btn-primary btn-lg' type='button' onclick='showPicker()'>Select Image</button>
             </div>
+            <!-- Hide this section until an image is selected -->
             <div id='image-picked-group' class='d-none'>
                 <div>
                     <img id='image-picked' class='img-fluid' alt='Chosen Image' height='200'>
@@ -39,6 +40,7 @@
                 </div>
             </div>
         </div>
+        <!-- Hide this section until an image is analysed -->
         <div id='alert' class='d.none' role='alert'>
             <label id='result-label'></label>
         </div>

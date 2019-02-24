@@ -16,7 +16,7 @@
         <h1 class="display-3">Classify images of London bridges</h1>
         <p>Use images of <strong>Albert</strong> bridge, <strong>Battersea</strong> bridge, or <strong>Chelsea</strong> bridge</p>
         <div>
-            <div class='no-display'>
+            <div class='d-none'>
                 <input id='file-input'
                        class='no-display'
                        type='file'
@@ -29,12 +29,12 @@
                 <label id='upload-label'>No file chosen</label>
             </div>
             <div>
-                <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
+                <img id='image-picked' class='d-none' alt='Chosen Image' height='200'>
             </div>
             <div class='analyze'>
                 <button id='analyze-button' class='btn btn-secondary' type='button' onclick='analyze()'>Analyze</button>
             </div>
-            <div class='result-label'>
+            <div id='alert' class='d-none' role='alert'>
                 <label id='result-label'></label>
             </div>
         </div>

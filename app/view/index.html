@@ -24,18 +24,18 @@
                        accept='image/*'
                        onchange='showPicked(this)'>
             </div>
-            <div class='col-md'>
+            <div class='col-md mr-3'>
                 <button class='btn btn-primary btn-lg' type='button' onclick='showPicker()'>Select Image</button>
             </div>
             <!-- Hide this section until an image is selected -->
             <div id='image-picked-group' class='d-none'>
-                <div>
+                <div class='mr-3'>
                     <img id='image-picked' class='img-fluid' alt='Chosen Image' height='200'>
                 </div>
-                <div class='upload-label'>
+                <div class='upload-label mr-3'>
                     <label id='upload-label'>No file chosen</label>
                 </div>
-                <div class='analyze'>
+                <div class='analyze mr-3'>
                     <button id='analyze-button' class='btn btn-secondary' type='button' onclick='analyze()'>Analyze</button>
                 </div>
             </div>

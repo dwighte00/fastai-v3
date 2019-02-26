@@ -8,6 +8,7 @@ function showPicked(input) {
     reader.onload = function (e) {
         el('image-picked').src = e.target.result;
         el('image-picked-group').className = 'col-md-10 mt-3 mb-3';
+        el('analyze').className = '';
     }
     reader.readAsDataURL(input.files[0]);
 }

@@ -7,7 +7,7 @@ function showPicked(input) {
     var reader = new FileReader();
     reader.onload = function (e) {
         el('image-picked').src = e.target.result;
-        el('image-picked-group').className = 'col-md-10 mt-3 mb-3';
+        el('image-picked-group').classList.remove('d-none');
         el('analyze-button').classList.remove('btn-secondary');
         el('analyze-button').classList.add('btn-success');
         el('analyze-button').disabled = false;
@@ -28,7 +28,7 @@ function analyze() {
     xhr.onload = function(e) {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
-            el('alert').className = 'alert alert-success col-md mt-3 mb-3';
+            el('alert').classList.remove('d-none');
             el('result-label').innerHTML = `Result = ${response['result']}`;
             el('select-button').focus();
         }

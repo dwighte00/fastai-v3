@@ -7,7 +7,7 @@ function showPicked(input) {
     var reader = new FileReader();
     reader.onload = function (e) {
         el('image-picked').src = e.target.result;
-        el('image-picked-group').className = 'col-md mt-3 mb-3';
+        el('image-picked-group').className = 'col-md-10 mt-3 mb-3';
     }
     reader.readAsDataURL(input.files[0]);
 }

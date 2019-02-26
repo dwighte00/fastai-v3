@@ -16,6 +16,18 @@
         <h1 class='display-4'>Classify images of London bridges</h1>
         <p>Use images of <span class='font-weight-bolder'>Albert</span> bridge, <span class='font-weight-bolder'>Battersea</span> bridge, or <span class='font-weight-bolder'>Chelsea</span> bridge</p>
         <div class='row'>
+            <div class='col-md mt-3 mb-3'>
+                <button id='select-button' class='btn btn-primary btn-lg' type='button' onclick='showPicker()'>Select Image</button>
+                <button id='analyze-button' class='btn btn-secondary btn-lg' disabled type='button' onclick='analyze()'>Analyze</button>
+                <!-- Hide this section until an image is analysed -->
+        <div class='row'>
+            <div id='alert' class='d.none' role='alert'>
+                <label id='result-label'></label>
+            </div>
+        </div>
+            </div>            
+        </div>
+        <div class='row'>
             <div class='d-none'>
                 <input id='file-input'
                        class='no-display'
@@ -23,10 +35,6 @@
                        name='file'
                        accept='image/*'
                        onchange='showPicked(this)'>
-            </div>
-            <div class='col-md-2 mt-3 mb-3'>
-                <button class='btn btn-primary btn-lg btn-block mb-3' type='button' onclick='showPicker()'>Select Image</button>
-                <button id='analyze-button' class='btn btn-secondary btn-lg btn-block d-none' type='button' onclick='analyze()'>Analyze</button>
             </div>
             <!-- Hide this section until an image is selected -->
             <div id='image-picked-group' class='d-none'>
@@ -36,12 +44,6 @@
                 <div class='upload-label'>
                     <label id='upload-label'>No file chosen</label>
                 </div>
-            </div>
-        </div>
-        <!-- Hide this section until an image is analysed -->
-        <div class='row'>
-            <div id='alert' class='d.none' role='alert'>
-                <label id='result-label'></label>
             </div>
         </div>
     </div>

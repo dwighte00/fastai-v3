@@ -8,7 +8,10 @@ function showPicked(input) {
     reader.onload = function (e) {
         el('image-picked').src = e.target.result;
         el('image-picked-group').className = 'col-md-10 mt-3 mb-3';
-        el('analyze-button').className = 'btn btn-secondary btn-lg btn-block';
+        el('analyze-button').classList.remove('btn-secondary');
+        el('analyze-button').classList.add('btn-success');
+        el('analyze-button').disabled = false;
+        el('analyze-button').focus();
     }
     reader.readAsDataURL(input.files[0]);
 }
@@ -27,6 +30,7 @@ function analyze() {
             var response = JSON.parse(e.target.responseText);
             el('alert').className = 'alert alert-success col-md mt-3 mb-3';
             el('result-label').innerHTML = `Result = ${response['result']}`;
+            el('select-button').focus();
         }
         el('analyze-button').innerHTML = 'Analyze';
     }

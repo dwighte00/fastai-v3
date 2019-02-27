@@ -8,6 +8,8 @@ function showPicked(input) {
     reader.onload = function (e) {
         el('image-picked').src = e.target.result;
         el('image-picked-group').classList.remove('d-none');
+        el('result-label').innerHTML = '';
+        el('alert').className = '';
         el('analyze-button').classList.remove('btn-secondary');
         el('analyze-button').classList.add('btn-success');
         el('analyze-button').disabled = false;
@@ -28,8 +30,8 @@ function analyze() {
     xhr.onload = function(e) {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
-            el('alert').className = 'alert alert-success';
             el('result-label').innerHTML = `Result = ${response['result']}`;
+            el('alert').className = 'alert alert-success';
             el('select-button').focus();
         }
         el('analyze-button').innerHTML = 'Analyze';

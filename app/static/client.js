@@ -9,7 +9,7 @@ function showPicked(input) {
         el('image-picked').src = e.target.result;
         el('image-picked-group').classList.remove('d-none');
         el('result-label').innerHTML = '';
-        el('alert').className = '';
+        el('alert').classList.remove('alert-success');
         el('analyze-button').classList.remove('btn-secondary');
         el('analyze-button').classList.add('btn-success');
         el('analyze-button').disabled = false;
@@ -31,7 +31,7 @@ function analyze() {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
             el('result-label').innerHTML = `Result = ${response['result']}`;
-            el('alert').className = 'alert alert-success';
+            el('alert').classList.add('alert-success');
             el('select-button').focus();
         }
         el('analyze-button').innerHTML = 'Analyze';

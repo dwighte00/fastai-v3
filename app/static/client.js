@@ -28,7 +28,7 @@ function analyze() {
     xhr.onload = function(e) {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
-            el('alert').classList.remove('d-none');
+            el('alert').className = 'alert alert-success';
             el('result-label').innerHTML = `Result = ${response['result']}`;
             el('select-button').focus();
         }
